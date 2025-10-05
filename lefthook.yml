@@ -1,0 +1,11 @@
+assert_lefthook_installed: true
+pre-commit:
+  jobs:
+    - name: Code Style
+      run: 'vendor/bin/rector process -- {staged_files} && vendor/bin/php-cs-fixer --config=.php-cs-fixer.php -- {staged_files}'
+      glob: "**/*.php"
+      stage_fixed: true
+commit-msg:
+  jobs:
+    - name: Commit Lint
+      run: 'npx commitlint --edit {0}'
