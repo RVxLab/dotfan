@@ -59,5 +59,14 @@
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "sort-packages": true
+    },
+    "scripts": {
+        "analyze": "vendor/bin/phpstan analyze --memory-limit=-1",
+        "codestyle": [
+            "@rector",
+            "@lint"
+        ],
+        "lint": "vendor/bin/php-cs-fixer fix",
+        "rector": "vendor/bin/rector process"
     }
 }
