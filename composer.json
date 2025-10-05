@@ -21,7 +21,7 @@
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.88",
         "mockery/mockery": "^1.6.12",
-        "pestphp/pest": "^3.8.2"
+        "pestphp/pest": "^4.0.0"
     },
     "autoload": {
         "psr-4": {
