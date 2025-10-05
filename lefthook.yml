@@ -3,7 +3,7 @@ pre-commit:
   parallel: true
   jobs:
     - name: Code Style
-      run: 'vendor/bin/rector process -- {staged_files} && vendor/bin/php-cs-fixer --config=.php-cs-fixer.php -- {staged_files}'
+      run: 'vendor/bin/rector process -- {staged_files} && vendor/bin/php-cs-fixer --config=.php-cs-fixer.php fix -- {staged_files}'
       glob: '**/*.php'
       stage_fixed: true
     - name: Analyze
