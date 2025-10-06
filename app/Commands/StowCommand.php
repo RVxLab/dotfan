@@ -23,16 +23,43 @@ final class StowCommand extends Command
         $pwd = getcwd();
 
         $stowDir = (string) ($this->option('dir') ?? $pwd);
-        $this->option('target') ?? "$pwd/..";
+        $targetDir = $this->option('target') ?? "$pwd/..";
 
         $dirIter = new DirectoryIterator($stowDir);
 
+        /** @var DirectoryIterator $dir */
         foreach ($dirIter as $dir) {
+            if ($dir->isFile()) {
+                continue;
+            }
             if ($dir->isDot()) {
                 continue;
             }
+            $this->walkDir($dir->getPath(), $dir->getBasename(), $targetDir);
 
-            dump($dir->getPathname());
+            break;
+        }
+    }
+
+    private function walkDir(string $baseDir, string $baseName, string $targetBaseDir): void
+    {
+        $base = "$baseDir/$baseName";
+        $dirIter = new DirectoryIterator($base);
+
+        foreach ($dirIter as $dir) {
+            if ($dir->isFile()) {
+                continue;
+            }
+            if ($dir->isDot()) {
+                continue;
+            }
+            $target = sprintf('%s/%s', $targetBaseDir, $dir->getBasename());
+
+            if (file_exists($target)) {
+                continue;
+            }
+
+            echo $target;
         }
     }
 }
