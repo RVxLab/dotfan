@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4a78ce0466edd9be003a0d36c14419a5",
+    "content-hash": "6b74328bae4005c0b0abde5bdd1a6983",
     "packages": [
         {
             "name": "brick/math",
@@ -7953,6 +7953,90 @@
                 "source": "https://github.com/phar-io/version/tree/3.2.1"
             },
             "time": "2022-02-21T01:04:05+00:00"
+        },
+        {
+            "name": "phpacker/phpacker",
+            "version": "0.6.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpacker/phpacker.git",
+                "reference": "b313838e348f40fb7aad0c6fe220eb9e56f2abd4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpacker/phpacker/zipball/b313838e348f40fb7aad0c6fe220eb9e56f2abd4",
+                "reference": "b313838e348f40fb7aad0c6fe220eb9e56f2abd4",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/prompts": "^0.3",
+                "laravel/serializable-closure": "^2.0",
+                "spatie/once": "^3",
+                "symfony/console": "^7",
+                "symfony/event-dispatcher": "^7",
+                "symfony/filesystem": "^7",
+                "symfony/finder": "^7",
+                "vlucas/phpdotenv": "^5.6"
+            },
+            "require-dev": {
+                "cpx/cpx": "^1.0",
+                "laravel/pint": "^1.20",
+                "nunomaduro/collision": "^8.8",
+                "pestphp/pest": "^3.8",
+                "phpstan/phpstan": "^2.1",
+                "symfony/process": "^7.3"
+            },
+            "bin": [
+                "./bin/phpacker"
+            ],
+            "type": "library",
+            "extra": {
+                "thanks": [
+                    {
+                        "url": "https://github.com/crazywhalecc/static-php-cli",
+                        "name": "Static PHP CLI"
+                    },
+                    {
+                        "url": "https://github.com/easysoft/phpmicro",
+                        "name": "phpmicro"
+                    },
+                    {
+                        "url": "https://github.com/nativephp/php-bin",
+                        "name": "NativePHP"
+                    }
+                ]
+            },
+            "autoload": {
+                "files": [
+                    "src/constants.php"
+                ],
+                "psr-4": {
+                    "Tests\\": "tests/",
+                    "PHPacker\\PHPacker\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "gwleuverink",
+                    "email": "willem@leuver.ink"
+                }
+            ],
+            "description": "Package a PHP script as a standalone cross-platform binary. Convenience wrapper around static-php & phpmicro using general-purpose php binaries",
+            "support": {
+                "issues": "https://github.com/phpacker/phpacker/issues",
+                "source": "https://github.com/phpacker/phpacker/tree/0.6.3"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/gwleuverink",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-09-09T08:53:52+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",

@@ -1,0 +1,6 @@
+{
+    "src": "./builds/dotfan.phar",
+    "dest": "./builds",
+    "platform": "all",
+    "php": "8.4"
+}

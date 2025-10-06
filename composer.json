@@ -28,6 +28,7 @@
         "larastan/larastan": "^3.7",
         "mockery/mockery": "^1.6.12",
         "pestphp/pest": "^4.0.0",
+        "phpacker/phpacker": "^0.6.3",
         "phpstan/extension-installer": "^1.4",
         "phpstan/phpstan": "^2.1",
         "phpstan/phpstan-strict-rules": "^2.0",
@@ -62,6 +63,14 @@
     },
     "scripts": {
         "analyze": "vendor/bin/phpstan analyze --memory-limit=-1",
+        "build:all": [
+            "@build:clean",
+            "@build:phar",
+            "@build:static"
+        ],
+        "build:clean": "rm -rf ./builds",
+        "build:phar": "php dotfan app:build dotfan.phar",
+        "build:static": "vendor/bin/phpacker build",
         "codestyle": [
             "@rector",
             "@lint"
